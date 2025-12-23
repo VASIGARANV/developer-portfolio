@@ -35,3 +35,27 @@ body {
   // padding-top: calc(var(--index) * 2.5rem);
   top: calc(var(--index) * 4rem);
 }
+
+/* Hide Next.js DevTools floating toggle (dev-only). */
+/* Targets known IDs/classes and the aria-label used by the devtools menu. */
+#nextjs-dev-tools-menu,
+#nextjs-dev-tools-toggle,
+#nextjs-devtools,
+.nextjs-devtools,
+[id^="nextjs"],
+[aria-label="Next.js Dev Tools Items"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Additional selectors: hide the Next.js devtools status button and logo toggle */
+#next-logo,
+[data-nextjs-dev-tools-button],
+button[data-nextjs-dev-tools-button],
+[data-next-mark] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+

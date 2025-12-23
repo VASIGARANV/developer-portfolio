@@ -35,10 +35,8 @@ function ContactForm() {
 
     try {
       setIsLoading(true);
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_APP_URL}/api/contact`,
-        userInput
-      );
+      // Use relative API path so it works in dev and production without needing NEXT_PUBLIC_APP_URL
+      const res = await axios.post('/api/contact', userInput);
 
       toast.success("Message sent successfully!");
       setUserInput({
